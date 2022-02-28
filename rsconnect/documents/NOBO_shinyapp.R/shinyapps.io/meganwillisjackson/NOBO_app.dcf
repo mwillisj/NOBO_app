@@ -1,0 +1,13 @@
+name: NOBO_app
+title: NOBO_app
+username:
+account: meganwillisjackson
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5744554
+bundleId: 5623963
+url: https://meganwillisjackson.shinyapps.io/NOBO_app/
+when: 1646023248.63656
+lastSyncTime: 1646023248.63656
+asMultiple: FALSE
+asStatic: FALSE

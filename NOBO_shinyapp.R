@@ -1,13 +1,11 @@
 
 # Loading Libraries
 library(shiny)
-library(leaflet)
 library(leaflet.extras)
 library(tidyverse)
 library(ggmap)
 library(sf)
 library(tidyverse)
-library(sf)
 library(leaflet)
 library(leaflegend)
 library(htmltools)
@@ -18,7 +16,7 @@ library(spatial)
 library(dplyr)
 library(jsonlite)
 library(ggplot2)
-library(hrbrthemes)
+# library(hrbrthemes)
 library(ggthemes)
 library(rgdal)
 library(RColorBrewer)
@@ -117,13 +115,16 @@ GCT_and_Geographies$label <-
 bird_df <- readRDS(file = "forapp.rds") %>%
   rename(stateabbr = STATE)
 
-bird_dat <- readRDS(file = "bird_dat.rds")
+bird_dat <- readRDS(file = "bird_dat.rds") %>%
+  .[-c(2, 4:9, 11:12, 14:18)]
 
 GCT_and_Geographies_df <- as.data.frame(GCT_and_Geographies)
 
 bird_df <- bird_df %>%
-  left_join(GCT_and_Geographies_df[,c(1, 38)], by = c("stateabbr" = "STUSPS"))
-
+  left_join(GCT_and_Geographies_df[,c(1, 38)], by = c("stateabbr" = "STUSPS")) %>%
+  .[-c(2, 4:9, 11:12, 14:18)]
+  
+  
 
 # Functions -------------------
 
@@ -155,7 +156,7 @@ depth_plot <- function(var_x, var_y, var_z = "REGION", var_state) {
     theme(
       legend.position = "bottom", 
       axis.title = element_text(size = 16),
-      axis.text.x = element_text(family = "Trebuchet MS", size = 12),
+      axis.text.x = element_text(size = 12),
       panel.grid = element_blank())
       # labs( x = NULL, y = var_y))
 }
