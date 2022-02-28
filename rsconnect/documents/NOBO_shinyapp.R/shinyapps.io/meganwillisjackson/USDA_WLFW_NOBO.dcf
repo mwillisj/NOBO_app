@@ -1,0 +1,13 @@
+name: USDA_WLFW_NOBO
+title: USDA_WLFW_NOBO
+username:
+account: meganwillisjackson
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5534473
+bundleId: 5623635
+url: https://meganwillisjackson.shinyapps.io/USDA_WLFW_NOBO/
+when: 1646008638.26848
+lastSyncTime: 1646008638.26848
+asMultiple: FALSE
+asStatic: FALSE
